@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Mobile Automation OYO Consumer App" verbose="1">
+	<listeners>
+		<listener class-name="utils.TestListener" />
+		<!-- <listener class-name="utils.RetryListener" /> -->
+	</listeners>
+	<test name="Regression suite">
+		<classes>
+			<class name="automatedTests.HomeActivityTest" />
+			<!-- <class name="automatedTests.SearchActivityTest" />
+			<class name="automatedTests.ConfirmBookingActivityTest" /> -->
+		</classes>
+	</test>
+</suite>
