@@ -76,7 +76,7 @@ public class AppFactory implements Config {
 
 		String pingCmd = "ping -c 4 " + publicipAddress;
 		String pingResult = "";
-		String apkPath_remote = new String("C:/Users/nitesh.arora/Downloads/com.oyo.consumer.apk");
+		String apkPath_remote = new String("C:/Users/OYO/Downloads/com.oyo.consumer_3.4.3.apk");
 		String apkPath_local = new String("/Users/dhiraj.aggarwal/Downloads/com.oyo.consumer_3.4.3.apk");
 		
 		if (execution_Env.equals("local")) {
