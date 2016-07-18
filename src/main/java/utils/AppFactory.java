@@ -78,6 +78,7 @@ public class AppFactory implements Config {
 		String pingResult = "";
 		String apkPath_remote = new String("C:/Users/OYO/Downloads/com.oyo.consumer_3.4.3.apk");
 		String apkPath_local = new String("/Users/dhiraj.aggarwal/Downloads/com.oyo.consumer_3.4.3.apk");
+		String apkPath_drive = new String("https://drive.google.com/a/oyorooms.com/file/d/0ByVSIjrhzdk-MGVHTm4tQUpiQzg/view?usp=sharing");
 		
 		if (execution_Env.equals("local")) {
 			desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_local);
@@ -98,7 +99,7 @@ public class AppFactory implements Config {
 				in.close();
 
 				if (pingResult.contains("bytes from")) {
-					desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_remote);
+					desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_drive);
 					desiredCaps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, app_Package);
 					desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_Local);
 					nodeip = publicipAddress;
