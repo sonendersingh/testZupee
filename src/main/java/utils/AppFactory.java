@@ -99,7 +99,7 @@ public class AppFactory implements Config {
 				in.close();
 
 				if (pingResult.contains("bytes from")) {
-					desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_drive);
+					//desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_drive);
 					desiredCaps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, app_Package);
 					desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_Local);
 					nodeip = publicipAddress;
