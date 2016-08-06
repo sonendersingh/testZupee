@@ -9,7 +9,8 @@ public interface Config {
 
 	String UDID = "";
 	String automation_Name = "Appium";
-	String platform_Version = "4.4";
+	String platform_Version_local = "6.0.1";
+	String platform_Version_office = "4.4";
 	String appium_Version = "1.5.3";
 	String platform_Name = "Android";
 
@@ -18,12 +19,12 @@ public interface Config {
 	String app_Package = "com.oyo.consumer";
 
 	String device_Name_SauceLab = "Samsung Galaxy S4 Emulator";
-	String device_Name_Office = "0123456789ABCDEF";
+	String device_Name_OfficeAndRemote = "0123456789ABCDEF";
 	String device_Name_Local = "310099c2af33230b";
 
 	String sauceServerAdd = "DhirajAggarwal:a380f489-7e94-49a4-8068-b01c617b08a4@ondemand.saucelabs.com:80";
 	String remote_Add = "124.124.44.49";
-	String office_Add = "10.10.5.64";
+	String office_Add = "10.10.1.148";
 	String local_Add = "0.0.0.0";
 	String port_Remote = ":4723";
 }

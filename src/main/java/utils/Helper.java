@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TimeoutException;
@@ -78,7 +79,7 @@ public class Helper {
 	public void waitForElement(String locate, String element) {
 		long time = System.currentTimeMillis();
 		try {
-			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(10, TimeUnit.SECONDS)
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(20, TimeUnit.SECONDS)
 					.pollingEvery(500, TimeUnit.MILLISECONDS);
 			wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(loc(locate, element))));
 			System.out.println("Time taken to find out the element \"" + element + "\" is "
@@ -86,8 +87,9 @@ public class Helper {
 		} catch (NoSuchElementException | TimeoutException e) {
 			System.out.println("Ohh! " + element + " couldn't be found. The Timeout happened in "
 					+ ((System.currentTimeMillis() - time) / 1000) + " seconds.");
-			makeNewLogFile(e.getMessage(), element);
+			//makeNewLogFile(e.getMessage(), element);
 		} catch (UnhandledAlertException e) {
+			System.out.println("Exception of Alert");
 			acceptAlert();
 		}
 	}
@@ -132,13 +134,13 @@ public class Helper {
 		}
 	}
 
-	public Boolean isElemnetPresent(String locator, String element) throws ElementNotFoundException {
+	public Boolean isElementPresent(String locator, String element) throws ElementNotFoundException {
 		try {
 			findMobileElement(locator, element).isDisplayed();
-			System.out.println("Hurray! Element is present");
+			System.out.println("Hurray! Element \""+element+"\" is present");
 			return true;
 		} catch (Exception e) {
-			System.out.println("Alaas! Element was not there");
+			System.out.println("Alaas! Element \""+element+"\" was not there");
 			return false;
 		}
 	}

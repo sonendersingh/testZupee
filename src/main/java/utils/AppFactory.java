@@ -43,7 +43,6 @@ public class AppFactory implements Config {
 	@BeforeClass
 	public AppiumDriver<MobileElement> init() throws MalformedURLException {
 		desiredCaps.setCapability(MobileCapabilityType.AUTOMATION_NAME, automation_Name);
-		desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_Version);
 		desiredCaps.setCapability(MobileCapabilityType.APPIUM_VERSION, appium_Version);
 		desiredCaps.setCapability(MobileCapabilityType.PLATFORM_NAME, platform_Name);
 		desiredCaps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, app_Activity);
@@ -81,6 +80,7 @@ public class AppFactory implements Config {
 		String apkPath_drive = new String("https://drive.google.com/a/oyorooms.com/file/d/0ByVSIjrhzdk-MGVHTm4tQUpiQzg/view?usp=sharing");
 		
 		if (execution_Env.equals("local")) {
+			desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_Version_local);
 			desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_local);
 			desiredCaps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, app_Package);
 			desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_Local);
@@ -99,9 +99,10 @@ public class AppFactory implements Config {
 				in.close();
 
 				if (pingResult.contains("bytes from")) {
+					desiredCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platform_Version_office);
 					//desiredCaps.setCapability(MobileCapabilityType.APP, apkPath_drive);
 					desiredCaps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, app_Package);
-					desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_Local);
+					desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_OfficeAndRemote);
 					nodeip = publicipAddress;
 					nodeUrl = nodeUrl1 + nodeip + port1 + nodeUrl2;
 					System.out.println("OYOMobile: Able to ping" + nodeip + " and " + nodeUrl);

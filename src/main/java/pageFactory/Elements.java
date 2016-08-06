@@ -49,4 +49,6 @@ public interface Elements {
 	String bookingConfirmationSuccessText = "com.oyo.consumer:id/booking_title";
 	String cancelBookingButton = "com.oyo.consumer:id/cancel_booking_wrap_width_button";
 	String cancellationReason = "com.oyo.consumer:id/cancellation_reason";
+	String finalCancellation = "com.oyo.consumer:id/cancel_button";
+	String dismissCancellation = "com.oyo.consumer:id/dismiss";
 }

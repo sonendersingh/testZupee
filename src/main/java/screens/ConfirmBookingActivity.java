@@ -18,4 +18,8 @@ public class ConfirmBookingActivity extends BaseActivity {
 	public void clickCancellationReason() {
 		helper.findMobileListElements("id", cancellationReason).get(3).click();
 	}
+	
+	public void clickfinalCancellation() {
+		helper.findMobileElement("id", finalCancellation).click();
+	}
 }

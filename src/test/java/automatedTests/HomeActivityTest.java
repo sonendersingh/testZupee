@@ -38,6 +38,7 @@ public class HomeActivityTest extends BaseActivityTest {
 	public void tearDown() {
 		confirmBookingActivity.clickCancelTheBooking();
 		confirmBookingActivity.clickCancellationReason();
+		confirmBookingActivity.clickfinalCancellation();
 		System.out.println("Driver Quitted");
 		super.tearDown();
 	}
