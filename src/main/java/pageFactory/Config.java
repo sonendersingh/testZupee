@@ -18,7 +18,7 @@ public interface Config {
 	String app_Package = "com.oyo.consumer";
 
 	String device_Name_SauceLab = "Samsung Galaxy S4 Emulator";
-	String device_Name_Office = "ZY2232XW3M";
+	String device_Name_Office = "0123456789ABCDEF";
 	String device_Name_Local = "310099c2af33230b";
 
 	String sauceServerAdd = "DhirajAggarwal:a380f489-7e94-49a4-8068-b01c617b08a4@ondemand.saucelabs.com:80";
