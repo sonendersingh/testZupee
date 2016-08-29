@@ -19,6 +19,6 @@ public interface DataElements {
 	// String locationToSearch = map.get("locationToSearch").toString();
 	String testPhoneNumber = "0000089876";
 	String testOTP = "098765";
-	String locationToSearch = "Bengaluru, Karnataka, India";
+	String locationToSearch = "New Delhi, Delhi, India";
 	String bookingSuccessText = "Booking Successful";
 }
