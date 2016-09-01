@@ -23,8 +23,8 @@ public interface Config {
 	String device_Name_Local = "310099c2af33230b";
 
 	String sauceServerAdd = "DhirajAggarwal:a380f489-7e94-49a4-8068-b01c617b08a4@ondemand.saucelabs.com:80";
-	String remote_Add = "103.248.85.52";
-	String office_Add = "10.10.1.148";
+	String remote_Add = "61.12.86.235";
+	String office_Add = "10.10.64.130";
 	String local_Add = "0.0.0.0";
 	String port_Remote = ":4723";
 }
