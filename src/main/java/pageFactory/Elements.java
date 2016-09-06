@@ -30,7 +30,7 @@ public interface Elements {
 	String submitFinalFeedback = "com.oyo.consumer:id/submit";
 	String laterButtonOnFinalFeedbackSceen = "com.oyo.consumer:id/negative_button";
 
-	String searchBoxOnHomePage = "com.oyo.consumer:id/search_layout1";
+	String searchBoxOnHomePage = "com.oyo.consumer:id/search_layout";
 
 	String serachBoxOnSearchPage = "com.oyo.consumer:id/auto_complete_text_view";
 	String locationSuggestionOnSearchPage = "com.oyo.consumer:id/tv_search_item";
