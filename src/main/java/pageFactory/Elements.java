@@ -32,7 +32,7 @@ public interface Elements {
 
 	String searchBoxOnHomePage = "com.oyo.consumer:id/search_layout";
 
-	String serachBoxOnSearchPage = "com.oyo.consumer:id/auto_complete_text_view";
+	String serachBoxOnSearchPage = "com.oyo.consumer:id/auto_complete_text_view1";
 	String locationSuggestionOnSearchPage = "com.oyo.consumer:id/tv_search_item";
 
 	String searchPageHeaderLocationText = "com.oyo.consumer:id/tv_search_text";
