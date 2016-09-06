@@ -204,6 +204,7 @@ public class Helper {
 			Map<String, String> testcase_dir = new HashMap<String, String>();
 
 			testcase_dir.put("HomeActivityTest", "Dhiraj Aggarwal");
+			testcase_dir.put("SanityTest", "Dhiraj Aggarwal");
 
 			String cont_str = "";
 			// cont_str += cont_dir.get("Dhiraj") + ",";
