@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class HomeActivityTest extends BaseActivityTest {
+public class SanityTest extends BaseActivityTest {
 
 	@BeforeClass
 	public void verifySignUpFlow() {
@@ -42,4 +42,5 @@ public class HomeActivityTest extends BaseActivityTest {
 		System.out.println("Driver Quitted");
 		super.tearDown();
 	}
+
 }

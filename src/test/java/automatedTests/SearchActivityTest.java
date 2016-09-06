@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class SearchActivityTest extends BaseActivityTest {
-		
+
 	@Test
 	public void verifySearch() {
 		searchActivity.clickLocationSuggestion();

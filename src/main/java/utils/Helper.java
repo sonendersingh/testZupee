@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
@@ -77,21 +78,23 @@ public class Helper {
 	}
 
 	public void waitForElement(String locate, String element) {
+		String msg;
 		long time = System.currentTimeMillis();
 		try {
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(20, TimeUnit.SECONDS)
 					.pollingEvery(500, TimeUnit.MILLISECONDS);
 			wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(loc(locate, element))));
-			System.out.println("Time taken to find out the element \"" + element + "\" is "
-					+ ((System.currentTimeMillis() - time) / 1000) + " seconds.");
-		} catch (NoSuchElementException | TimeoutException e) {
+			msg = "Time taken to find out the element \"" + element + "\" is "
+					+ ((System.currentTimeMillis() - time) / 1000) + " seconds.";
+			System.out.println(msg);
+			logFile(msg, element);
+		} catch (NoSuchElementException | TimeoutException | UnhandledAlertException e1) {
 			System.out.println("Ohh! " + element + " couldn't be found. The Timeout happened in "
 					+ ((System.currentTimeMillis() - time) / 1000) + " seconds.");
-			//makeNewLogFile(e.getMessage(), element);
-		} catch (UnhandledAlertException e) {
-			System.out.println("Exception of Alert");
 			acceptAlert();
+			logFile(e1.getMessage(), element);
 		}
+
 	}
 
 	public void sleep(int time) {
@@ -109,11 +112,11 @@ public class Helper {
 	public void phoneCallDismiss() {
 		driver.switchTo().alert().dismiss();
 	}
-	
-	public static void makeNewLogFile(String log, String element) {
+
+	public static void logFile(String log, String element) {
 		Date currentDate = new Date();
 		String currentDateAndTime = currentDate.toString();
-		String separator = "\n#################################################################################\n\n";
+		String separator = "\n#################################################################################\n";
 		String finalLogs = element + ":-\n" + log + separator;
 
 		String[] dateFolder = currentDateAndTime.split(":");
@@ -121,9 +124,16 @@ public class Helper {
 		try {
 			File targetFolder = new File(newFolder);
 			if (!targetFolder.exists()) {
-				targetFolder.createNewFile();
+				targetFolder.mkdir();
 			}
-			FileOutputStream fos = new FileOutputStream(targetFolder, true);
+
+			String newFile = newFolder + fileSeperator + dateFolder[0].split(" ")[3] + ":" + dateFolder[1];
+			File file = new File(newFile);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+
+			FileOutputStream fos = new FileOutputStream(file, true);
 
 			byte[] data = finalLogs.getBytes();
 			fos.write(data);
@@ -137,10 +147,10 @@ public class Helper {
 	public Boolean isElementPresent(String locator, String element) throws ElementNotFoundException {
 		try {
 			findMobileElement(locator, element).isDisplayed();
-			System.out.println("Hurray! Element \""+element+"\" is present");
+			System.out.println("Hurray! Element \"" + element + "\" is present");
 			return true;
 		} catch (Exception e) {
-			System.out.println("Alaas! Element \""+element+"\" was not there");
+			System.out.println("Alaas! Element \"" + element + "\" was not there");
 			return false;
 		}
 	}
@@ -221,6 +231,20 @@ public class Helper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	AppFactory appFactory = new AppFactory();
+	public void init(){
+		try {
+			appFactory.init();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void tearDown(){
+		driver.quit();
 	}
 
 }
