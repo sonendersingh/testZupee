@@ -124,7 +124,7 @@ public class Helper {
 		try {
 			File targetFolder = new File(newFolder);
 			if (!targetFolder.exists()) {
-				targetFolder.mkdir();
+				targetFolder.mkdirs();
 			}
 
 			String newFile = newFolder + fileSeperator + dateFolder[0].split(" ")[3] + ":" + dateFolder[1];
