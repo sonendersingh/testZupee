@@ -108,9 +108,9 @@ public class AppFactory implements Config {
 					desiredCaps.setCapability(MobileCapabilityType.DEVICE_NAME, device_Name_OfficeAndRemote);
 					nodeip = publicipAddress;
 					nodeUrl = nodeUrl1 + nodeip + port1 + nodeUrl2;
-					System.out.println("OYOMobile: Able to ping" + nodeip + " and " + nodeUrl);
+					System.out.println("OYOMobile: Able to ping " + nodeip + " and " + nodeUrl);
 				} else {
-					System.out.println("OYOMobile: Not Able to ping" + nodeip + " and " + nodeUrl);
+					System.out.println("OYOMobile: Not Able to ping " + nodeip + " and " + nodeUrl);
 					nodeip = ipAddress;
 					nodeUrl = nodeUrl1 + nodeip + nodeUrl2;
 					desiredCaps.setCapability(MobileCapabilityType.APP, app);

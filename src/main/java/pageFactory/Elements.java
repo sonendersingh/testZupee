@@ -35,13 +35,15 @@ public interface Elements {
 	String serachBoxOnSearchPage = "com.oyo.consumer:id/auto_complete_text_view";
 	String locationSuggestionOnSearchPage = "com.oyo.consumer:id/tv_search_item";
 
+	String closeSunriseCheckIn = "com.oyo.consumer:id/close_dialog";
 	String searchPageHeaderLocationText = "com.oyo.consumer:id/tv_search_text";
 	String gotItCorporate = "com.oyo.consumer:id/tv_dismiss";
 	String sort = "com.oyo.consumer:id/tv_sort";
 	String sortByPrice = "com.oyo.consumer:id/lowToHighSortLayout";
 	String dateOnSearchPage = "com.oyo.consumer:id/dates_text";
 	String checkIn_CheckOutDate = "android.widget.TextView";
-	String hotelCardOnSearchPage = "com.oyo.consumer:id/network_image_view";
+	String hotelCardOnSearchPageId = "com.oyo.consumer:id/network_image_view";
+	String hotelCardOnSearchPageClass = "android.widget.ImageView";
 
 	String bookRoomButton = "com.oyo.consumer:id/state_text";
 	String bookButtonText = "BOOK ROOM";

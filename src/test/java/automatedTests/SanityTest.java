@@ -28,8 +28,13 @@ public class SanityTest extends BaseActivityTest {
 	}
 
 	@Test(priority = 3)
+	public void verifyHotelSearch() {
+		searchActivity.closeSunRiseCheckIn();
+		Assert.assertEquals(searchActivity.clickTopHotelCard(), true);
+	}
+
+	@Test(priority = 4)
 	public void verifyConfirmBooking() {
-		searchActivity.clickTopHotelCard();
 		hotelActivity.clickBookNowButton();
 		Assert.assertEquals(confirmBookingActivity.getBookingTitleText(), bookingSuccessText);
 	}

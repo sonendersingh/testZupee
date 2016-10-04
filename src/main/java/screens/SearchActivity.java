@@ -1,5 +1,7 @@
 package screens;
 
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
+
 public class SearchActivity extends BaseActivity {
 
 	@Override
@@ -13,13 +15,13 @@ public class SearchActivity extends BaseActivity {
 	}
 
 	public String getlocationSuggestion() {
-		//helper.sleep(4000);
+		// helper.sleep(4000);
 		System.out.println("Get Serached Location");
 		return helper.findMobileListElements("id", locationSuggestionOnSearchPage).get(0).getText();
 	}
-	
+
 	public void clickLocationSuggestion() {
-		//helper.sleep(4000);
+		// helper.sleep(4000);
 		System.out.println("Location Enerted");
 		helper.findMobileListElements("id", locationSuggestionOnSearchPage).get(0).click();
 		System.out.println("Location Clicked");
@@ -56,8 +58,20 @@ public class SearchActivity extends BaseActivity {
 		helper.findMobileElement("id", checkIn_CheckOutDate).click();
 	}
 
-	public void clickTopHotelCard() {
-		helper.findMobileElement("id", hotelCardOnSearchPage).click();
+	public boolean clickTopHotelCard() {
+		if (helper.isElementPresent("id", hotelCardOnSearchPageId)) {
+			helper.findMobileListElements("class", hotelCardOnSearchPageClass).get(1).click();
+			System.out.println("Hotel Card Clicked");
+			return true;
+		}
+		System.out.println("No Hotels found");
+		return false;
+	}
+
+	public void closeSunRiseCheckIn() {
+		if (helper.isElementPresent("id", closeSunriseCheckIn)) {
+			helper.findMobileElement("id", closeSunriseCheckIn).click();
+		}
 	}
 
 }

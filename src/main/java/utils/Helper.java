@@ -30,6 +30,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import com.sun.jna.platform.win32.Netapi32Util.User;
 
 import io.appium.java_client.MobileElement;
 
@@ -124,7 +125,7 @@ public class Helper {
 		try {
 			File targetFolder = new File(newFolder);
 			if (!targetFolder.exists()) {
-				targetFolder.mkdir();
+				targetFolder.mkdirs();
 			}
 
 			String newFile = newFolder + fileSeperator + dateFolder[0].split(" ")[3] + ":" + dateFolder[1];
@@ -199,16 +200,32 @@ public class Helper {
 
 			Map<String, String> cont_dir = new HashMap<String, String>();
 
-			cont_dir.put("Dhiraj Aggarwal", "919716036288");
+			cont_dir.put("Ravi", "918826054166");
+			cont_dir.put("Kumar", "919971999659");
+			cont_dir.put("Sonender", "917503931626");
+			cont_dir.put("Swati", "919650278293");
+			cont_dir.put("Smita", "918010104824");
+			cont_dir.put("Dhiraj", "919716036288");
+			cont_dir.put("Ankit", "919413626266");
+			cont_dir.put("Manish", "9971638342");
+			cont_dir.put("Pragati", "9009190478");
+			cont_dir.put("Manas", "9654988087");
+			cont_dir.put("NiteshA", "9896358859");
+			cont_dir.put("NiteshG", "7836814900");
+			cont_dir.put("Hemant", "9818263577");
 
 			Map<String, String> testcase_dir = new HashMap<String, String>();
 
 			testcase_dir.put("HomeActivityTest", "Dhiraj Aggarwal");
+			testcase_dir.put("SanityTest", "Dhiraj Aggarwal");
 
 			String cont_str = "";
 			// cont_str += cont_dir.get("Dhiraj") + ",";
 			String[] messArr = message.split("_");
-			cont_str += cont_dir.get(testcase_dir.get(messArr[1]));
+			cont_str += cont_dir.get("Kumar") + "," + cont_dir.get("Sonender") + "," + cont_dir.get("Smita") + ","
+					+ cont_dir.get("Manish") + "," + cont_dir.get("Pragati") + "," + cont_dir.get("Ravi") + ","
+					+ cont_dir.get("Ankit") + "," + cont_dir.get("NiteshA") + "," + cont_dir.get("Dhiraj") + ","
+					+ cont_dir.get("NiteshG");// cont_dir.get(testcase_dir.get(messArr[1]));
 
 			URL url = new URL("http://enterprise.smsgupshup.com/GatewayAPI/rest?method=sendMessage&msg=" + msg_mod
 					+ "&msg_type=text&password=j2C74A&send_to=%2B" + cont_str + "&userid=2000143219");
@@ -234,7 +251,8 @@ public class Helper {
 	}
 
 	AppFactory appFactory = new AppFactory();
-	public void init(){
+
+	public void init() {
 		try {
 			appFactory.init();
 		} catch (MalformedURLException e) {
@@ -242,8 +260,8 @@ public class Helper {
 			e.printStackTrace();
 		}
 	}
-	
-	public void tearDown(){
+
+	public void tearDown() {
 		driver.quit();
 	}
 
