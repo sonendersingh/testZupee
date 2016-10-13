@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -68,6 +69,11 @@ public class Helper {
 		return driver.findElements(loc(locate, element));
 	}
 
+	public void navigateBack(){
+	driver.navigate().back();
+	
+	}
+	
 	public WebElement findMobileElement(String locate, String element) {
 		waitForElement(locate, element);
 		return driver.findElement(loc(locate, element));
@@ -190,14 +196,17 @@ public class Helper {
 
 	public void sendSMStoAll(String message) throws Exception {
 		try {
-			String msg_mod = "";
+			
+			String msg_mod = URLEncoder.encode(message, "UTF-8");
+
+		/*	String msg_mod = "";
 			for (int i = 0; i < message.length(); i++) {
 				if (message.charAt(i) == ' ') {
 					msg_mod += "%20";
 				} else
 					msg_mod += message.charAt(i);
 			}
-
+*/
 			Map<String, String> cont_dir = new HashMap<String, String>();
 
 			cont_dir.put("Ravi", "918826054166");
@@ -261,6 +270,8 @@ public class Helper {
 		}
 	}
 
+
+	
 	public void tearDown() {
 		driver.quit();
 	}

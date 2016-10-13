@@ -43,8 +43,7 @@ public class TestListener extends TestListenerAdapter {
 
 		try {
 			helper.takeScreenShot(testClassName, testMethodName);
-			String alertMessage = "OYO Mobile Test Failed: _" + testClassName + "_" + testMethodName + "_"
-					+ result.getMethod().getDescription();
+			String alertMessage = "Consumer App Test Case Failed : \nPage: " + testClassName + "\nMethod:" + testMethodName;
 			System.out.println(alertMessage);
 			helper.alertUsers(alertMessage);
 		} catch (Exception ex) {
