@@ -16,6 +16,7 @@ public class SanityTest extends BaseActivityTest {
 	public void verifyLocationSearch() {
 		homeActivity.clickSearchTextBox();
 		searchActivity.setLocationToSearchTextBox(locationToSearch);
+		helper.sleep(1000);
 		String flag = searchActivity.getlocationSuggestion();
 		Assert.assertTrue(flag.contains(locationToSearch.split(",")[0].trim()) == true);
 		System.out.println("Location Search method");
@@ -36,6 +37,7 @@ public class SanityTest extends BaseActivityTest {
 	@Test(priority = 4)
 	public void verifyConfirmBooking() {
 		hotelActivity.clickBookNowButton();
+		helper.sleep(5000);
 		Assert.assertEquals(confirmBookingActivity.getBookingTitleText(), bookingSuccessText);
 	}
 

@@ -1,7 +1,5 @@
 package screens;
 
-import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
-
 public class SearchActivity extends BaseActivity {
 
 	@Override
