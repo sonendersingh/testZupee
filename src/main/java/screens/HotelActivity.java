@@ -10,4 +10,8 @@ public class HotelActivity extends BaseActivity {
 	public void clickBookNowButton() {
 		helper.scrolTo(bookButtonText).click();
 	}
+	
+	public String getHotelName(){
+		return helper.findMobileElement("id", hotelNameId).getText();
+	}
 }

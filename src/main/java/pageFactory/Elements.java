@@ -35,6 +35,7 @@ public interface Elements {
 	String serachBoxOnSearchPage = "com.oyo.consumer:id/auto_complete_text_view";
 	String locationSuggestionOnSearchPage = "com.oyo.consumer:id/tv_search_item";
 
+	String hotelNameId = "com.oyo.consumer:id/tv_hotel_name";
 	String closeSunriseCheckIn = "com.oyo.consumer:id/close_dialog";
 	String searchPageHeaderLocationText = "com.oyo.consumer:id/tv_search_text";
 	String gotItCorporate = "com.oyo.consumer:id/tv_dismiss";
@@ -48,6 +49,7 @@ public interface Elements {
 	String bookRoomButton = "com.oyo.consumer:id/state_text";
 	String bookButtonText = "BOOK ROOM";
 
+	String bookingId = "com.oyo.consumer:id/booking_id";
 	String bookingConfirmationSuccessText = "com.oyo.consumer:id/booking_title";
 	String cancelBookingButton = "com.oyo.consumer:id/cancel_booking_wrap_width_button";
 	String cancellationReason = "com.oyo.consumer:id/cancellation_reason";

@@ -36,6 +36,7 @@ public class SanityTest extends BaseActivityTest {
 
 	@Test(priority = 4)
 	public void verifyConfirmBooking() {
+		System.out.println("Hotel Name: "+hotelActivity.getHotelName());
 		hotelActivity.clickBookNowButton();
 		helper.sleep(5000);
 		Assert.assertEquals(confirmBookingActivity.getBookingTitleText(), bookingSuccessText);
@@ -43,6 +44,7 @@ public class SanityTest extends BaseActivityTest {
 
 	@AfterClass
 	public void tearDown() {
+		System.out.println(confirmBookingActivity.getBookingId());
 		confirmBookingActivity.clickCancelTheBooking();
 		confirmBookingActivity.clickCancellationReason();
 		confirmBookingActivity.clickfinalCancellation();

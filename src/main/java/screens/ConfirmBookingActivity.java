@@ -7,6 +7,10 @@ public class ConfirmBookingActivity extends BaseActivity {
 		return false;
 	}
 	
+	public String getBookingId() {
+		return helper.findMobileElement("id", bookingId).getText();
+	}
+	
 	public String getBookingTitleText() {
 		return helper.findMobileElement("id", bookingConfirmationSuccessText).getText();
 	}
