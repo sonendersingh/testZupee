@@ -209,7 +209,6 @@ public class Helper {
 */
 			Map<String, String> cont_dir = new HashMap<String, String>();
 
-			cont_dir.put("Ravi", "918826054166");
 			cont_dir.put("Kumar", "919971999659");
 			cont_dir.put("Sonender", "917503931626");
 			cont_dir.put("Swati", "919650278293");
@@ -231,9 +230,8 @@ public class Helper {
 			String cont_str = "";
 			// cont_str += cont_dir.get("Dhiraj") + ",";
 			String[] messArr = message.split("_");
-			cont_str += cont_dir.get("Kumar") + "," + cont_dir.get("Sonender") + "," + cont_dir.get("Smita") + ","
-					+ cont_dir.get("Manish") + "," + cont_dir.get("Pragati") + "," + cont_dir.get("Ravi") + ","
-					+ cont_dir.get("Ankit") + "," + cont_dir.get("NiteshA") + "," + cont_dir.get("Dhiraj") + ","
+			cont_str += cont_dir.get("Sonender") + "," + cont_dir.get("Smita") + ","
+					+ cont_dir.get("Pragati") + "," + cont_dir.get("Ankit") + "," + cont_dir.get("NiteshA") + "," + cont_dir.get("Dhiraj") + ","
 					+ cont_dir.get("NiteshG");// cont_dir.get(testcase_dir.get(messArr[1]));
 
 			URL url = new URL("http://enterprise.smsgupshup.com/GatewayAPI/rest?method=sendMessage&msg=" + msg_mod
